@@ -66,6 +66,34 @@
 
 
     });
+    
+    btnNot.addEventListener('mousemove', function(event) {
+        if (!token) {
+            alert('соси');
+            token = true;
+        }
+
+        btnNot.style.transition = '.2s linear';
+
+        let newLeft = Math.floor(Math.random() * 100);
+        let newtTop = Math.floor(Math.random() * 100);
+
+        let random = Math.round(Math.random());
+        let random2 = Math.round(Math.random());
+
+        if (random) {
+            newLeft *= -1;
+        }
+
+        if (random2) {
+            newtTop *= -1;
+        }
+
+        btnNot.style.left = event.clientX + newLeft + 'px';
+        btnNot.style.top = event.clientY + newtTop + 'px';
+
+
+    });
 </script>
 </body>
 </html>
