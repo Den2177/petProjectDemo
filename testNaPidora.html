@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    
+</head>
+<body>
+<h1>Тест на пидора!</h1>
+<h2>Ты пидор?</h2>
+<div class="btns">
+<button class="btn btn1">Да</button>
+<button class="btn btn2">Нет</button>
+</div>
+
+<script>
+    let btnYes = document.querySelector('.btn1');
+    let btnNot = document.querySelector('.btn2');
+
+
+    let btnYesCoords1 = btnYes.getBoundingClientRect().left;
+    let btnYesCoords2 = btnYes.getBoundingClientRect().top;
+
+    let btnNotCoords1 = btnNot.getBoundingClientRect().left;
+    let btnNotCoords2 = btnNot.getBoundingClientRect().top;
+    let token = false;
+
+    btnYes.style.position = 'fixed';
+
+    btnYes.style.top = btnYesCoords2 + 'px';
+    btnYes.style.left = btnYesCoords1 - 20 + 'px';
+
+    btnNot.style.position = 'fixed';
+
+    btnNot.style.top = btnNotCoords2 + 'px';
+    btnNot.style.left = btnNotCoords1 - 20 + 'px';
+
+    
+
+
+
+
+
+
+
+
+    btnNot.addEventListener('mouseover', function(event) {
+        if (!token) {
+            alert('соси');
+            token = true;
+        }
+
+        btnNot.style.transition = '.2s linear';
+
+        let newLeft = Math.floor(Math.random() * 100);
+        let newtTop = Math.floor(Math.random() * 100);
+
+        let random = Math.round(Math.random());
+        let random2 = Math.round(Math.random());
+
+        if (random) {
+            newLeft *= -1;
+        }
+
+        if (random2) {
+            newtTop *= -1;
+        }
+
+        btnNot.style.left = event.clientX + newLeft + 'px';
+        btnNot.style.top = event.clientY + newtTop + 'px';
+
+
+    });
+</script>
+</body>
+</html>
